@@ -1,0 +1,54 @@
+Name: ncdu
+Summary: NCurses Disk Usage
+# Careful: 2.x versions are written in zig, not C.
+Version: 1.16
+Release: 0
+Group: Applications
+URL: https://dev.yorhel.nl/ncdu
+SCM: https://g.blicky.net/ncdu.git
+License: MIT
+Sources:
+  # 'https://dev.yorhel.nl/download/%{name}-%{version}.tar.gz'
+  - '%{name}-%{version}.tar.gz'
+Description: |
+
+    ncdu (NCurses Disk Usage) is a curses-based version of the well-known 'du',
+    and provides a fast way to see what directories are using your disk space.
+
+    %if "%{?vendor}" == "chum"
+    Type: console-application
+    PackagerName: nephros
+    Categories:
+     - Utility
+     - ConsoleOnly
+    Custom:
+      Repo: https://g.blicky.net/ncdu.git
+      PackagingRepo: https://github.com/sailfishos-chum/ncdu
+    Screenshots:
+      - https://dev.yorhel.nl/img/ncduscan-2.png
+      - https://dev.yorhel.nl/img/ncdudone-2.png
+      - https://dev.yorhel.nl/img/ncduinfo-2.png
+    Url:
+      Homepage: https://dev.yorhel.nl/ncdu
+      Help: https://dev.yorhel.nl/ncdu/man
+      Bugtracker: https://code.blicky.net/yorhel/ncdu/issues
+      Donation: https://dev.yorhel.nl/contributing.html
+    %endif
+
+SetupOptions: -q -n %{name}-%{version}/upstream
+#Macros:
+#  - 'foo;bar'
+#Patches:
+#  - 'baz'
+#Requires:
+#  - libsailfishapp-launcher
+Configure: reconfigure
+ConfigOptions:
+   - '--with-ncursesw'
+PkgBR:
+  - autoconf
+  - automake
+PkgConfigBR:
+    - ncursesw
+Files:
+  - '%{_bindir}/*'
