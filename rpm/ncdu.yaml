@@ -1,7 +1,7 @@
 Name: ncdu
 Summary: NCurses Disk Usage
 # Careful: 2.x versions are written in zig, not C.
-Version: 1.16
+Version: 1.17
 Release: 0
 Group: Applications
 URL: https://dev.yorhel.nl/ncdu

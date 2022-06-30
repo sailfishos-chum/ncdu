@@ -9,7 +9,7 @@ Name:       ncdu
 # << macros
 
 Summary:    NCurses Disk Usage
-Version:    1.16
+Version:    1.17
 Release:    0
 Group:      Applications
 License:    MIT
