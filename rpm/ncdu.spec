@@ -26,11 +26,11 @@ ncdu (NCurses Disk Usage) is a curses-based version of the well-known 'du',
 and provides a fast way to see what directories are using your disk space.
 
 %if "%{?vendor}" == "chum"
+PackageName: ncdu
 Type: console-application
 PackagerName: nephros
 Categories:
  - Utility
- - ConsoleOnly
 Custom:
   Repo: https://g.blicky.net/ncdu.git
   PackagingRepo: https://github.com/sailfishos-chum/ncdu
